@@ -1,0 +1,60 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vmin;
+    background: #bbada0;
+    padding: 2vmin;
+    border-radius: 1vmin;
+    position: relative;
+  }
+  
+  .tile {
+    --x: 0;
+    --y: 0;
+    width: 18vmin;
+    height: 18vmin;
+    background: rgba(238, 228, 218, 0.35);
+    border-radius: 1vmin;
+    font-size: 7vmin;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transition: 100ms all;
+    transform: 
+      translateX(calc(var(--x) * (18vmin + 1vmin)))
+      translateY(calc(var(--y) * (18vmin + 1vmin)));
+  }
+  
+  .tile[class*="tile-"] {
+    background: #eee4da;
+    animation: appear 150ms;
+  }
+  
+  .tile-new {
+    animation: pop 0.15s ease-out;
+  }
+  
+  @keyframes appear {
+    0% { opacity: 0; transform: scale(0); }
+    90% { opacity: 1; transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes pop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .game-over::after {
+    content: "Игра окончена!";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8vmin;
+    color: #776e65;
+    text-shadow: 2px 2px white;
+  }
