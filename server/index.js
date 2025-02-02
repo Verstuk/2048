@@ -1,3 +1,5 @@
+app.use(express.static('client'));
+
 require('dotenv').config(); // Загружает переменные из .env
 
 const { Telegraf } = require('telegraf');
