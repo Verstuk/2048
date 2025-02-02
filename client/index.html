@@ -1,19 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2048 Telegram</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="hammer.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2048 Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #faf8ef;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin-top: 20px;
+      color: #776e65;
+    }
+    canvas {
+      display: block;
+      margin: 20px auto;
+      background-color: #bbada0;
+      border-radius: 6px;
+    }
+    .score {
+      font-size: 24px;
+      color: #776e65;
+    }
+  </style>
 </head>
 <body>
-    <div class="game-container">
-        <div class="score">Счет: <span id="score">0</span></div>
-        <div id="grid" class="grid"></div>
-    </div>
-    <script src="game.js"></script>
-    <script src="tg-init.js"></script>
+  <h1>2048</h1>
+  <div class="score">Score: <span id="score">0</span></div>
+  <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+  <script src="game.js"></script>
 </body>
-</html> 
+</html>
